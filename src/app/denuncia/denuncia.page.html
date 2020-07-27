@@ -12,7 +12,7 @@
       <ion-title size="large">Denúncia</ion-title>
     </ion-toolbar>
   </ion-header>
-  <form [formGroup]="formDenuncia" (ngSubmit)="mostraAlerta('Sucesso', 'Denúncia Cadastrada!')">
+  <form [formGroup]="formDenuncia" (ngSubmit)="cadastraDenuncia()">
   <ion-item>
     <div style="justify-content: space-between;">
       <ion-input placeholder="Informe seu nome" type="text" formControlName="nome"></ion-input>
