@@ -9,7 +9,7 @@ const routes: Routes = [
     children: [
       {
         path: 'cep',
-        loadChildren: () => import('../cep/cep.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('../cep/cep.module').then(m => m.CepPageModule)
       },
       {
         path: 'denuncia',

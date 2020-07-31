@@ -1,17 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Busca de CEP
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">Busca de CEP</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <form [formGroup]="formCep" (ngSubmit)="buscaEnderecoCEP()">
+  <ion-item>
+    <div style="justify-content: space-between;">
+      <ion-input placeholder="Informe o CEP do endereço" type="text" formControlName="cep"></ion-input>    
+      <div *ngIf="formCep.controls.cep.errors">
+        <span *ngIf="formCep.controls.cep.errors.required"><small>Campo obrigatório</small></span>
+      </div>  
+      <ion-button type="submit" color="primary" [disabled]="!formCep.valid" size="small">Buscar</ion-button>
+    </div>
+  </ion-item>
+  <ion-item>
+    <div style="justify-content: space-between;">
+      <ion-label>{{endereco}}</ion-label>
+    </div>
+  </ion-item>
+</form>
 </ion-content>

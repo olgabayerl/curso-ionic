@@ -2,6 +2,7 @@ import { IonicModule } from '@ionic/angular';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 import { CepPage } from './cep.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
@@ -13,8 +14,9 @@ import { CepPageRoutingModule } from './cep-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    CepPageRoutingModule
+    CepPageRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [CepPage]
 })
-export class Tab1PageModule {}
+export class CepPageModule {}
