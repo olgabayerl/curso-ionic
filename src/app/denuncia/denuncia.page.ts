@@ -3,6 +3,8 @@ import { AlertController } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Denuncia } from '../models/denuncia/denuncia';
 import { DenunciaService } from '../services/denuncia/denuncia.service';
+import { StorageService } from '../services/storage/storage.service';
+
 
 @Component({
   selector: 'app-denuncia',
@@ -13,7 +15,7 @@ export class denunciaPage {
 
   public formDenuncia: FormGroup;
 
-  constructor(public alertController: AlertController, private formBuilder: FormBuilder, private denunciaService: DenunciaService) {
+  constructor(public alertController: AlertController, private formBuilder: FormBuilder, private denunciaService: DenunciaService, private storageService: StorageService) {
     this.formDenuncia = this.formBuilder.group({
       'nome': [null, Validators.compose([Validators.required, Validators.minLength(3)])],
       'email': [null, Validators.compose([Validators.required,
@@ -21,7 +23,8 @@ export class denunciaPage {
       'endereco': [null, Validators.compose([Validators.required, Validators.minLength(3)])],
       'data': [null, Validators.compose([Validators.required])],
       'descricao': [null, Validators.compose([Validators.required, Validators.minLength(3)])]
-		});
+    });
+    this.recuperaEnderecoStorage();
   }
   async mostraAlerta(titulo: string, mensagem: string) {
     const alert = await this.alertController.create({
@@ -45,5 +48,9 @@ export class denunciaPage {
     }).catch((error)=>{
       console.log(error);
     })
+  }
+
+  async recuperaEnderecoStorage(){
+    this.formDenuncia.controls["endereco"].setValue(await this.storageService.recuperaStorage("endereco"));
   }
 }

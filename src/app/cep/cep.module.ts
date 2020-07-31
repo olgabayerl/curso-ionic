@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { CepPage } from './cep.page';
-import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { CepPageRoutingModule } from './cep-routing.module';
 
@@ -13,7 +12,6 @@ import { CepPageRoutingModule } from './cep-routing.module';
     IonicModule,
     CommonModule,
     FormsModule,
-    ExploreContainerComponentModule,
     CepPageRoutingModule,
     ReactiveFormsModule
   ],
