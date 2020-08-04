@@ -25,7 +25,7 @@ export class denunciaPage {
       'descricao': [null, Validators.compose([Validators.required, Validators.minLength(3)])]
     });
     this.recuperaEnderecoStorage();
-  }
+  };
   async mostraAlerta(titulo: string, mensagem: string) {
     const alert = await this.alertController.create({
       header: titulo,
@@ -34,7 +34,7 @@ export class denunciaPage {
     });
 
     await alert.present();
-  }
+  };
   async cadastraDenuncia(){
     let denuncia = new Denuncia();
     denuncia.nome = this.formDenuncia.controls["nome"].value;
@@ -48,9 +48,11 @@ export class denunciaPage {
     }).catch((error)=>{
       console.log(error);
     })
-  }
+  };
 
   async recuperaEnderecoStorage(){
-    this.formDenuncia.controls["endereco"].setValue(await this.storageService.recuperaStorage("endereco"));
-  }
+    const endereco = await this.storageService.recuperaStorage("endereco");
+    this.formDenuncia.controls["endereco"].setValue(endereco);
+    console.log("Endereço: " +endereco );
+  };
 }

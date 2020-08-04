@@ -11,17 +11,13 @@ export class StorageService {
   async insereStorage(nome:string, objeto:any){
     this.nativeStorage.setItem(nome, objeto)
     .then(
-      () => console.log('Stored item!'),
-      error => console.error('Error storing item', error)
+      () => console.log('Item armazenado'),
+      error => console.error('Erro ao armazenar o item', error)
     );
   }
 
   async recuperaStorage(nome:string){
-    this.nativeStorage.getItem(nome)
-    .then(
-      data => console.log(data),
-      error => console.error(error)
-    );
+    return await this.nativeStorage.getItem(nome);
   }
 
 }

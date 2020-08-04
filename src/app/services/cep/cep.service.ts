@@ -15,7 +15,7 @@ export class CepService {
   }
  
   public converterRespostaParaCep(cepNaResposta:any){
-    let endereco = cepNaResposta.logradouro + ", " + cepNaResposta.bairro + ", " + cepNaResposta.complemento + ", " + cepNaResposta.localidade + " - " + cepNaResposta.uf;
+    let endereco = cepNaResposta.logradouro + ", " + cepNaResposta.bairro + ", " + cepNaResposta.localidade + " - " + cepNaResposta.uf;
     this.storageService.insereStorage("endereco", endereco);
     return endereco;
   }
