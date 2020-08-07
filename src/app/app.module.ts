@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     NativeStorage,
+    Camera,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

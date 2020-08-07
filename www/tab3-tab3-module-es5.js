@@ -1,3 +1,7 @@
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["tab3-tab3-module"], {
@@ -17,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title>\r\n      Tab 3\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-header collapse=\"condense\">\r\n    <ion-toolbar>\r\n      <ion-title size=\"large\">Tab 3</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n\r\n  <app-explore-container name=\"Tab 3 page\"></app-explore-container>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title>\r\n      Fotos\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-header collapse=\"condense\">\r\n    <ion-toolbar>\r\n      <ion-title size=\"large\">Fotos</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n\r\n  <ion-button (click)=\"tirarFoto()\">\r\n    Foto\r\n  </ion-button>\r\n\r\n  <img [src]=\"fotoURL\" />\r\n\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -220,9 +224,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! @angular/core */
     "./node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js");
+    /* harmony import */
 
-    var Tab3Page = function Tab3Page() {
-      _classCallCheck(this, Tab3Page);
+
+    var _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @ionic-native/camera/ngx */
+    "./node_modules/@ionic-native/camera/__ivy_ngcc__/ngx/index.js");
+
+    var Tab3Page = /*#__PURE__*/function () {
+      function Tab3Page(camera) {
+        _classCallCheck(this, Tab3Page);
+
+        this.camera = camera;
+        this.cameraOptions = {
+          quality: 20,
+          destinationType: this.camera.DestinationType.DATA_URL,
+          encodingType: this.camera.EncodingType.JPEG,
+          mediaType: this.camera.MediaType.PICTURE
+        };
+      }
+
+      _createClass(Tab3Page, [{
+        key: "tirarFoto",
+        value: function tirarFoto() {
+          var _this = this;
+
+          this.camera.getPicture(this.cameraOptions).then(function (imagem) {
+            var base64Image = 'data:image/jpeg;base64,' + imagem;
+            _this.fotoURL = base64Image;
+          }, function (err) {
+            console.log(err);
+          });
+        }
+      }]);
+
+      return Tab3Page;
+    }();
+
+    Tab3Page.ctorParameters = function () {
+      return [{
+        type: _ionic_native_camera_ngx__WEBPACK_IMPORTED_MODULE_2__["Camera"]
+      }];
     };
 
     Tab3Page = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
