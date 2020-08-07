@@ -55,5 +55,9 @@
     </div>
   </ion-item>
   <ion-button expand="block" type="submit" [disabled]="!formDenuncia.valid">Enviar</ion-button>  
+  <ion-item>
+    <ion-label>Coordenadas: {{coordendas.latitude}}, {{coordendas.longitude}}</ion-label>
+  </ion-item>
+  <ion-button expand="block" (click)="recuperaCoordenadas()">Obter Localização</ion-button>
 </form>
 </ion-content>

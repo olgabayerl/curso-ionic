@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title>\r\n      Denúncia\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-header collapse=\"condense\">\r\n    <ion-toolbar>\r\n      <ion-title size=\"large\">Denúncia</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  <form [formGroup]=\"formDenuncia\" (ngSubmit)=\"cadastraDenuncia()\">\r\n  <ion-item lines=\"full\">\r\n    <div style=\"justify-content: space-between;\">\r\n      <ion-input placeholder=\"Informe seu nome\" type=\"text\" formControlName=\"nome\"></ion-input>\r\n      <div *ngIf=\"formDenuncia.controls.nome.errors\">\r\n        <span *ngIf=\"formDenuncia.controls.nome.errors.required\"><small>Campo obrigatório</small></span>\r\n      </div>\r\n    </div>\r\n  </ion-item>\r\n  <ion-item lines=\"full\">\r\n    <div style=\"justify-content: space-between;\">\r\n      <ion-input placeholder=\"Informe seu e-mail\" type=\"text\" formControlName=\"email\"></ion-input>\r\n      <div *ngIf=\"formDenuncia.controls.email.errors\">\r\n        <span *ngIf=\"formDenuncia.controls.email.errors.required\"><small>Campo obrigatório</small></span>\r\n        <span *ngIf=\"formDenuncia.controls.email.errors.pattern\"><small>Formato inválido</small></span>\r\n      </div>\r\n    </div>\r\n  </ion-item>\r\n  <ion-item>\r\n    <div style=\"justify-content: space-between;\">\r\n      <ion-input placeholder=\"Informe o endereço da ocorrência\" type=\"text\" formControlName=\"endereco\"></ion-input>\r\n      <div *ngIf=\"formDenuncia.controls.endereco.errors\">\r\n        <span *ngIf=\"formDenuncia.controls.endereco.errors.required\"><small>Campo obrigatório</small></span>\r\n      </div>\r\n    </div>\r\n  </ion-item>\r\n  <ion-item>\r\n    <div style=\"justify-content: space-between;\">\r\n      <ion-datetime displayFormat=\"DD-MM-YYYY\" placeholder=\"Informe a data da ocorrência\" formControlName=\"data\"></ion-datetime>\r\n      <div *ngIf=\"formDenuncia.controls.data.errors\">\r\n        <span *ngIf=\"formDenuncia.controls.data.errors.required\"><small>Campo obrigatório</small></span>\r\n      </div>\r\n    </div>\r\n  </ion-item>\r\n  <ion-item>\r\n    <div style=\"justify-content: space-between;\">\r\n    <ion-textarea placeholder=\"Descreva a denúncia\" type=\"text\" formControlName=\"descricao\"></ion-textarea>\r\n      <div *ngIf=\"formDenuncia.controls.descricao.errors\">\r\n        <span *ngIf=\"formDenuncia.controls.descricao.errors.required\"><small>Campo obrigatório</small></span>\r\n      </div>\r\n    </div>\r\n  </ion-item>\r\n  <ion-button expand=\"block\" type=\"submit\" [disabled]=\"!formDenuncia.valid\">Enviar</ion-button>  \r\n</form>\r\n</ion-content>\r\n";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title>\r\n      Denúncia\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-header collapse=\"condense\">\r\n    <ion-toolbar>\r\n      <ion-title size=\"large\">Denúncia</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n  <form [formGroup]=\"formDenuncia\" (ngSubmit)=\"cadastraDenuncia()\">\r\n  <ion-item lines=\"full\">\r\n    <div style=\"justify-content: space-between;\">\r\n      <ion-input placeholder=\"Informe seu nome\" type=\"text\" formControlName=\"nome\"></ion-input>\r\n      <div *ngIf=\"formDenuncia.controls.nome.errors\">\r\n        <span *ngIf=\"formDenuncia.controls.nome.errors.required\"><small>Campo obrigatório</small></span>\r\n      </div>\r\n    </div>\r\n  </ion-item>\r\n  <ion-item lines=\"full\">\r\n    <div style=\"justify-content: space-between;\">\r\n      <ion-input placeholder=\"Informe seu e-mail\" type=\"text\" formControlName=\"email\"></ion-input>\r\n      <div *ngIf=\"formDenuncia.controls.email.errors\">\r\n        <span *ngIf=\"formDenuncia.controls.email.errors.required\"><small>Campo obrigatório</small></span>\r\n        <span *ngIf=\"formDenuncia.controls.email.errors.pattern\"><small>Formato inválido</small></span>\r\n      </div>\r\n    </div>\r\n  </ion-item>\r\n  <ion-item>\r\n    <div style=\"justify-content: space-between;\">\r\n      <ion-input placeholder=\"Informe o endereço da ocorrência\" type=\"text\" formControlName=\"endereco\"></ion-input>\r\n      <div *ngIf=\"formDenuncia.controls.endereco.errors\">\r\n        <span *ngIf=\"formDenuncia.controls.endereco.errors.required\"><small>Campo obrigatório</small></span>\r\n      </div>\r\n    </div>\r\n  </ion-item>\r\n  <ion-item>\r\n    <div style=\"justify-content: space-between;\">\r\n      <ion-datetime displayFormat=\"DD-MM-YYYY\" placeholder=\"Informe a data da ocorrência\" formControlName=\"data\"></ion-datetime>\r\n      <div *ngIf=\"formDenuncia.controls.data.errors\">\r\n        <span *ngIf=\"formDenuncia.controls.data.errors.required\"><small>Campo obrigatório</small></span>\r\n      </div>\r\n    </div>\r\n  </ion-item>\r\n  <ion-item>\r\n    <div style=\"justify-content: space-between;\">\r\n    <ion-textarea placeholder=\"Descreva a denúncia\" type=\"text\" formControlName=\"descricao\"></ion-textarea>\r\n      <div *ngIf=\"formDenuncia.controls.descricao.errors\">\r\n        <span *ngIf=\"formDenuncia.controls.descricao.errors.required\"><small>Campo obrigatório</small></span>\r\n      </div>\r\n    </div>\r\n  </ion-item>\r\n  <ion-button expand=\"block\" type=\"submit\" [disabled]=\"!formDenuncia.valid\">Enviar</ion-button>  \r\n  <ion-item>\r\n    <ion-label>Coordenadas: {{coordendas.latitude}}, {{coordendas.longitude}}</ion-label>\r\n  </ion-item>\r\n  <ion-button expand=\"block\" (click)=\"recuperaCoordenadas()\">Obter Localização</ion-button>\r\n</form>\r\n</ion-content>\r\n";
     /***/
   },
 
@@ -245,15 +245,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(
     /*! ../services/storage/storage.service */
     "./src/app/services/storage/storage.service.ts");
+    /* harmony import */
+
+
+    var _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(
+    /*! @ionic-native/geolocation/ngx */
+    "./node_modules/@ionic-native/geolocation/__ivy_ngcc__/ngx/index.js");
 
     var denunciaPage = /*#__PURE__*/function () {
-      function denunciaPage(alertController, formBuilder, denunciaService, storageService) {
+      function denunciaPage(alertController, formBuilder, denunciaService, storageService, geolocation) {
         _classCallCheck(this, denunciaPage);
 
         this.alertController = alertController;
         this.formBuilder = formBuilder;
         this.denunciaService = denunciaService;
         this.storageService = storageService;
+        this.geolocation = geolocation;
         this.formDenuncia = this.formBuilder.group({
           'nome': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(3)])],
           'email': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].pattern('^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$')])],
@@ -262,6 +269,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           'descricao': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(3)])]
         });
         this.recuperaEnderecoStorage();
+        this.verificaCoordenadas();
       }
 
       _createClass(denunciaPage, [{
@@ -349,6 +357,59 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
             }, _callee3, this);
           }));
         }
+      }, {
+        key: "recuperaCoordenadas",
+        value: function recuperaCoordenadas() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee4() {
+            var _this2 = this;
+
+            return regeneratorRuntime.wrap(function _callee4$(_context4) {
+              while (1) {
+                switch (_context4.prev = _context4.next) {
+                  case 0:
+                    this.geolocation.getCurrentPosition().then(function (resp) {
+                      _this2.coordenadas = resp;
+                      console.log(JSON.stringify(resp));
+                    })["catch"](function (error) {
+                      _this2.mostraAlerta('Erro ao obter as coordenadas!', error);
+
+                      console.log(error);
+                    });
+
+                  case 1:
+                  case "end":
+                    return _context4.stop();
+                }
+              }
+            }, _callee4, this);
+          }));
+        }
+      }, {
+        key: "verificaCoordenadas",
+        value: function verificaCoordenadas() {
+          return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
+            var _this3 = this;
+
+            var watch;
+            return regeneratorRuntime.wrap(function _callee5$(_context5) {
+              while (1) {
+                switch (_context5.prev = _context5.next) {
+                  case 0:
+                    watch = this.geolocation.watchPosition();
+                    watch.subscribe(function (data) {
+                      _this3.posicoes.push(data);
+
+                      console.log(data);
+                    });
+
+                  case 2:
+                  case "end":
+                    return _context5.stop();
+                }
+              }
+            }, _callee5, this);
+          }));
+        }
       }]);
 
       return denunciaPage;
@@ -363,6 +424,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         type: _services_denuncia_denuncia_service__WEBPACK_IMPORTED_MODULE_5__["DenunciaService"]
       }, {
         type: _services_storage_storage_service__WEBPACK_IMPORTED_MODULE_6__["StorageService"]
+      }, {
+        type: _ionic_native_geolocation_ngx__WEBPACK_IMPORTED_MODULE_7__["Geolocation"]
       }];
     };
 
