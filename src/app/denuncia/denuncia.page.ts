@@ -4,7 +4,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Denuncia } from '../models/denuncia/denuncia';
 import { DenunciaService } from '../services/denuncia/denuncia.service';
 import { StorageService } from '../services/storage/storage.service';
-import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder, NativeGeocoderResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder/ngx';
+
 
 @Component({
   selector: 'app-denuncia',
@@ -14,18 +16,17 @@ import { Geolocation, Geoposition } from '@ionic-native/geolocation/ngx';
 export class denunciaPage {
 
   public formDenuncia: FormGroup;
-  coordenadas: Geoposition;
-  posicoes:Geoposition[];
+  latitude:any;
+  longitude:any;
+  endereco:String;
 
-  ionViewWillEnter () {
-    
-  }
 
   constructor(public alertController: AlertController, 
               private formBuilder: FormBuilder, 
               private denunciaService: DenunciaService, 
               private storageService: StorageService,
-              private geolocation: Geolocation) {
+              private geolocation: Geolocation,
+              private nativeGeocoder: NativeGeocoder) {
     this.formDenuncia = this.formBuilder.group({
       'nome': [null, Validators.compose([Validators.required, Validators.minLength(3)])],
       'email': [null, Validators.compose([Validators.required,
@@ -35,7 +36,6 @@ export class denunciaPage {
       'descricao': [null, Validators.compose([Validators.required, Validators.minLength(3)])]
     });
     this.recuperaEnderecoStorage();
-    this.verificaCoordenadas();
   };
 
   async mostraAlerta(titulo: string, mensagem: string) {
@@ -69,25 +69,30 @@ export class denunciaPage {
   };
 
   async recuperaCoordenadas(){
-    this.geolocation.getCurrentPosition().then((resp) => {
-      this.coordenadas = resp;
-      console.log(JSON.stringify(resp));
-    }).catch((error) => {
-      this.mostraAlerta('Erro ao obter as coordenadas!', error);
-      console.log(error);
+   
+    const position = await this.geolocation.getCurrentPosition({enableHighAccuracy: true, timeout: 5000, maximumAge: 0}).then((resp) => {
+        this.latitude = resp.coords.latitude;
+        this.longitude = resp.coords.longitude; 
+        console.log(JSON.stringify(resp));
+      }).catch((error) => {
+        this.mostraAlerta('Erro ao obter as coordenadas!', error);
+        console.log('Erro ao obter as coordenadas!' + error);
     });
+    await this.converteCoordenadas();
   }
 
-  async verificaCoordenadas(){
-    let options = {
-      enableHighAccuracy: true,
-      timeout: 5000,
-      maximumAge: 0
-    };
-    let watch = this.geolocation.watchPosition(options);
-      watch.subscribe((data) => {
-      this.posicoes.push(data);
-      console.log("Posições: " + JSON.stringify(data));
-    }, error=> console.log(error));
+  async converteCoordenadas(){
+    let options: NativeGeocoderOptions = {
+      useLocale: true,
+      maxResults: 5
+  };
+  
+  this.nativeGeocoder.reverseGeocode(this.latitude, this.longitude, options)
+    .then((result: NativeGeocoderResult[]) => {
+      this.endereco = JSON.stringify(result[0]);
+      console.log(this.endereco);
+    })
+    .catch((error: any) => console.log(error));
   }
+
 }

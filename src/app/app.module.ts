@@ -14,6 +14,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder} from '@ionic-native/native-geocoder/ngx';
 
 import { HttpClientModule } from '@angular/common/http';
 
@@ -30,6 +31,7 @@ import { HttpClientModule } from '@angular/common/http';
     NativeStorage,
     Geolocation,
     Camera,
+    NativeGeocoder,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
