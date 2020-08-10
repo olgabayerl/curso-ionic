@@ -154,6 +154,8 @@ let denunciaPage = class denunciaPage {
         this.recuperaEnderecoStorage();
         this.verificaCoordenadas();
     }
+    ionViewWillEnter() {
+    }
     ;
     mostraAlerta(titulo, mensagem) {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
@@ -203,11 +205,16 @@ let denunciaPage = class denunciaPage {
     }
     verificaCoordenadas() {
         return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, function* () {
-            let watch = this.geolocation.watchPosition();
+            let options = {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0
+            };
+            let watch = this.geolocation.watchPosition(options);
             watch.subscribe((data) => {
                 this.posicoes.push(data);
-                console.log(data);
-            });
+                console.log("Posições: " + JSON.stringify(data));
+            }, error => console.log(error));
         });
     }
 };

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit  } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Denuncia } from '../models/denuncia/denuncia';
@@ -17,6 +17,10 @@ export class denunciaPage {
   coordenadas: Geoposition;
   posicoes:Geoposition[];
 
+  ionViewWillEnter () {
+    
+  }
+
   constructor(public alertController: AlertController, 
               private formBuilder: FormBuilder, 
               private denunciaService: DenunciaService, 
@@ -33,6 +37,7 @@ export class denunciaPage {
     this.recuperaEnderecoStorage();
     this.verificaCoordenadas();
   };
+
   async mostraAlerta(titulo: string, mensagem: string) {
     const alert = await this.alertController.create({
       header: titulo,
@@ -74,10 +79,15 @@ export class denunciaPage {
   }
 
   async verificaCoordenadas(){
-    let watch = this.geolocation.watchPosition();
-    watch.subscribe((data) => {
-    this.posicoes.push(data);
-    console.log(data);
-    });
+    let options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+    let watch = this.geolocation.watchPosition(options);
+      watch.subscribe((data) => {
+      this.posicoes.push(data);
+      console.log("Posições: " + JSON.stringify(data));
+    }, error=> console.log(error));
   }
 }

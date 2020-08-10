@@ -273,6 +273,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       }
 
       _createClass(denunciaPage, [{
+        key: "ionViewWillEnter",
+        value: function ionViewWillEnter() {}
+      }, {
         key: "mostraAlerta",
         value: function mostraAlerta(titulo, mensagem) {
           return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
@@ -390,19 +393,26 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           return Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__awaiter"])(this, void 0, void 0, /*#__PURE__*/regeneratorRuntime.mark(function _callee5() {
             var _this3 = this;
 
-            var watch;
+            var options, watch;
             return regeneratorRuntime.wrap(function _callee5$(_context5) {
               while (1) {
                 switch (_context5.prev = _context5.next) {
                   case 0:
-                    watch = this.geolocation.watchPosition();
+                    options = {
+                      enableHighAccuracy: true,
+                      timeout: 5000,
+                      maximumAge: 0
+                    };
+                    watch = this.geolocation.watchPosition(options);
                     watch.subscribe(function (data) {
                       _this3.posicoes.push(data);
 
-                      console.log(data);
+                      console.log("Posições: " + JSON.stringify(data));
+                    }, function (error) {
+                      return console.log(error);
                     });
 
-                  case 2:
+                  case 3:
                   case "end":
                     return _context5.stop();
                 }
