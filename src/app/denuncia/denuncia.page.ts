@@ -24,7 +24,6 @@ export class denunciaPage {
       'data': [null, Validators.compose([Validators.required])],
       'descricao': [null, Validators.compose([Validators.required, Validators.minLength(3)])]
     });
-    this.recuperaEnderecoStorage();
   };
   async mostraAlerta(titulo: string, mensagem: string) {
     const alert = await this.alertController.create({
@@ -55,4 +54,7 @@ export class denunciaPage {
     this.formDenuncia.controls["endereco"].setValue(endereco);
     console.log("Endereço: " +endereco );
   };
+  ionViewWillEnter(){
+    this.recuperaEnderecoStorage();
+  }
 }
