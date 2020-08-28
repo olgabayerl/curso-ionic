@@ -580,7 +580,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! D:\Documentos\IONIC\curso-ionic\src\main.ts */
+    /*! D:\ionic\curso-ionic\curso-ionic\src\main.ts */
     "./src/main.ts");
     /***/
   }

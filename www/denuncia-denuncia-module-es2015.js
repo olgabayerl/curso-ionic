@@ -148,7 +148,7 @@ let denunciaPage = class denunciaPage {
             'data': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required])],
             'descricao': [null, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].compose([_angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].required, _angular_forms__WEBPACK_IMPORTED_MODULE_3__["Validators"].minLength(3)])]
         });
-        this.recuperaEnderecoStorage();
+        //this.recuperaEnderecoStorage();
     }
     ;
     mostraAlerta(titulo, mensagem) {
@@ -186,6 +186,9 @@ let denunciaPage = class denunciaPage {
         });
     }
     ;
+    ionViewWillEnter() {
+        this.recuperaEnderecoStorage();
+    }
 };
 denunciaPage.ctorParameters = () => [
     { type: _ionic_angular__WEBPACK_IMPORTED_MODULE_2__["AlertController"] },
