@@ -17,7 +17,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-tabs>\n\n  <ion-tab-bar slot=\"bottom\">\n    <ion-tab-button tab=\"cep\">\n      <ion-icon name=\"triangle\"></ion-icon>\n      <ion-label>Cep</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"denuncia\">\n      <ion-icon name=\"ellipse\"></ion-icon>\n      <ion-label>Denúncia</ion-label>\n    </ion-tab-button>\n\n    <ion-tab-button tab=\"tab3\">\n      <ion-icon name=\"square\"></ion-icon>\n      <ion-label>Tab 3</ion-label>\n    </ion-tab-button>\n  </ion-tab-bar>\n\n</ion-tabs>\n";
+    __webpack_exports__["default"] = "<ion-tabs>\r\n\r\n  <ion-tab-bar slot=\"bottom\">\r\n    <ion-tab-button tab=\"cep\">\r\n      <ion-icon name=\"triangle\"></ion-icon>\r\n      <ion-label>Cep</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"denuncia\">\r\n      <ion-icon name=\"ellipse\"></ion-icon>\r\n      <ion-label>Denúncia</ion-label>\r\n    </ion-tab-button>\r\n\r\n    <ion-tab-button tab=\"tab3\">\r\n      <ion-icon name=\"square\"></ion-icon>\r\n      <ion-label>Tab 3</ion-label>\r\n    </ion-tab-button>\r\n  </ion-tab-bar>\r\n\r\n</ion-tabs>\r\n";
     /***/
   },
 

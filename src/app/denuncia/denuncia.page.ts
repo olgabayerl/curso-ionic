@@ -35,7 +35,6 @@ export class denunciaPage {
       'data': [null, Validators.compose([Validators.required])],
       'descricao': [null, Validators.compose([Validators.required, Validators.minLength(3)])]
     });
-    this.recuperaEnderecoStorage();
   };
 
   async mostraAlerta(titulo: string, mensagem: string) {
@@ -80,19 +79,22 @@ export class denunciaPage {
     });
     await this.converteCoordenadas();
   }
+  ionViewWillEnter(){
+    this.recuperaEnderecoStorage();
+  }
 
   async converteCoordenadas(){
     let options: NativeGeocoderOptions = {
       useLocale: true,
       maxResults: 5
   };
-  
+    
   this.nativeGeocoder.reverseGeocode(this.latitude, this.longitude, options)
     .then((result: NativeGeocoderResult[]) => {
       this.endereco = JSON.stringify(result[0]);
       console.log(this.endereco);
     })
     .catch((error: any) => console.log(error));
-  }
+  };
 
 }

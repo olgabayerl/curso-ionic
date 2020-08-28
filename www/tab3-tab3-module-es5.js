@@ -21,7 +21,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\n  <ion-toolbar>\n    <ion-title>\n      Fotos\n    </ion-title>\n  </ion-toolbar>\n</ion-header>\n\n<ion-content [fullscreen]=\"true\">\n  <ion-header collapse=\"condense\">\n    <ion-toolbar>\n      <ion-title size=\"large\">Fotos</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-button (click)=\"tirarFoto()\">\n    Foto\n  </ion-button>\n\n  <img [src]=\"fotoURL\" />\n\n</ion-content>\n";
+    __webpack_exports__["default"] = "<ion-header [translucent]=\"true\">\r\n  <ion-toolbar>\r\n    <ion-title>\r\n      Fotos\r\n    </ion-title>\r\n  </ion-toolbar>\r\n</ion-header>\r\n\r\n<ion-content [fullscreen]=\"true\">\r\n  <ion-header collapse=\"condense\">\r\n    <ion-toolbar>\r\n      <ion-title size=\"large\">Fotos</ion-title>\r\n    </ion-toolbar>\r\n  </ion-header>\r\n\r\n  <ion-button (click)=\"tirarFoto()\">\r\n    Foto\r\n  </ion-button>\r\n\r\n  <img [src]=\"fotoURL\" />\r\n\r\n</ion-content>\r\n";
     /***/
   },
 
