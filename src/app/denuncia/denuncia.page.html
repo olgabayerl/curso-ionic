@@ -12,17 +12,12 @@
       <ion-title size="large">Denúncia</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-item>
     <ion-input placeholder="Informe seu nome"></ion-input>
-  </ion-item>
-  <ion-item>
     <ion-input placeholder="Informe o endereço da ocorrência"></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-datetime displayFormat="DD-MM-YYYY" placeholder="Informe a data da ocorrência"></ion-datetime>
-  </ion-item>
-  <ion-item>
+    <ion-datetime displayFormat="DD-MM-YYYY" placeholder="Informe a data da ocorrência">
+    </ion-datetime>
     <ion-textarea placeholder="Descreva a denúncia"></ion-textarea>
-  </ion-item>
-  <ion-button expand="block" (click)="mostraAlerta('Sucesso', 'Denúncia Cadastrada!')">Enviar</ion-button>  
+    <ion-button expand="block" (click)="mostraAlerta('Sucesso', 'Denúncia Cadastrada!')">
+      Enviar
+    </ion-button>  
 </ion-content>
