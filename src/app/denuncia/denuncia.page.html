@@ -13,47 +13,37 @@
     </ion-toolbar>
   </ion-header>
   <form [formGroup]="formDenuncia" (ngSubmit)="mostraAlerta('Sucesso', 'Denúncia Cadastrada!')">
-  <ion-item>
-    <div style="justify-content: space-between;">
-      <ion-input placeholder="Informe seu nome" type="text" formControlName="nome"></ion-input>
-      <div *ngIf="formDenuncia.controls.nome.errors">
-        <span *ngIf="formDenuncia.controls.nome.errors.required"><small>Campo obrigatório</small></span>
-      </div>
+  <div>
+    <ion-input placeholder="Informe seu nome" type="text" formControlName="nome"></ion-input>
+    <div *ngIf="formDenuncia.controls.nome.errors" style="color: red;">
+      <span *ngIf="formDenuncia.controls.nome.errors.required"><small>Campo obrigatório</small></span>
     </div>
-  </ion-item>
-  <ion-item>
-    <div style="justify-content: space-between;">
-      <ion-input placeholder="Informe seu e-mail" type="text" formControlName="email"></ion-input>
-      <div *ngIf="formDenuncia.controls.email.errors">
-        <span *ngIf="formDenuncia.controls.email.errors.required"><small>Campo obrigatório</small></span>
-        <span *ngIf="formDenuncia.controls.email.errors.pattern"><small>Formato inválido</small></span>
-      </div>
+  </div>
+  <div>
+    <ion-input placeholder="Informe seu e-mail" type="text" formControlName="email"></ion-input>
+    <div *ngIf="formDenuncia.controls.email.errors" style="color: red;">
+      <span *ngIf="formDenuncia.controls.email.errors.required"><small>Campo obrigatório</small></span>
+      <span *ngIf="formDenuncia.controls.email.errors.pattern"><small>Formato inválido</small></span>
     </div>
-  </ion-item>
-  <ion-item>
-    <div style="justify-content: space-between;">
-      <ion-input placeholder="Informe o endereço da ocorrência" type="text" formControlName="endereco"></ion-input>
-      <div *ngIf="formDenuncia.controls.endereco.errors">
-        <span *ngIf="formDenuncia.controls.endereco.errors.required"><small>Campo obrigatório</small></span>
-      </div>
+  </div>
+  <div>
+    <ion-input placeholder="Informe o endereço da ocorrência" type="text" formControlName="endereco"></ion-input>
+    <div *ngIf="formDenuncia.controls.endereco.errors" style="color: red;">
+      <span *ngIf="formDenuncia.controls.endereco.errors.required"><small>Campo obrigatório</small></span>
     </div>
-  </ion-item>
-  <ion-item>
-    <div style="justify-content: space-between;">
-      <ion-datetime displayFormat="DD-MM-YYYY" placeholder="Informe a data da ocorrência" formControlName="data"></ion-datetime>
-      <div *ngIf="formDenuncia.controls.data.errors">
-        <span *ngIf="formDenuncia.controls.data.errors.required"><small>Campo obrigatório</small></span>
-      </div>
+  </div>
+  <div>
+    <ion-datetime displayFormat="DD-MM-YYYY" placeholder="Informe a data da ocorrência" formControlName="data"></ion-datetime>
+    <div *ngIf="formDenuncia.controls.data.errors" style="color: red;">
+      <span *ngIf="formDenuncia.controls.data.errors.required"><small>Campo obrigatório</small></span>
     </div>
-  </ion-item>
-  <ion-item>
-    <div style="justify-content: space-between;">
-    <ion-textarea placeholder="Descreva a denúncia" type="text" formControlName="descricao"></ion-textarea>
-      <div *ngIf="formDenuncia.controls.descricao.errors">
-        <span *ngIf="formDenuncia.controls.descricao.errors.required"><small>Campo obrigatório</small></span>
-      </div>
+  </div>
+  <div>
+  <ion-textarea placeholder="Descreva a denúncia" type="text" formControlName="descricao"></ion-textarea>
+    <div *ngIf="formDenuncia.controls.descricao.errors" style="color: red;">
+      <span *ngIf="formDenuncia.controls.descricao.errors.required"><small>Campo obrigatório</small></span>
     </div>
-  </ion-item>
+  </div>
   <ion-button expand="block" type="submit" [disabled]="!formDenuncia.valid">Enviar</ion-button>  
 </form>
 </ion-content>
