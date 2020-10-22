@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertController } from '@ionic/angular';
 import { Denuncia } from '../models/denuncia/denuncia';
 import { DenunciaService } from '../services/denuncia/denuncia.service';
+import { NativeStorageService } from '../services/native-storage/native-storage.service';
 
 @Component({
   selector: 'app-tab2',
@@ -15,7 +16,8 @@ export class Tab2Page {
 
   constructor(private alertController: AlertController, 
     private formBuilder: FormBuilder, 
-    private denunciaService:DenunciaService) {
+    private denunciaService:DenunciaService, 
+    private nativeStorageService:NativeStorageService) {
     this.formDenuncia = this.formBuilder.group({
       'nome': [null, Validators.compose([Validators.required, Validators.minLength(3)])],
       'endereco':[null, Validators.compose([Validators.required, Validators.minLength(3)])],
@@ -50,6 +52,16 @@ export class Tab2Page {
       console.log(error);
       this.mostraAlerta("Erro", "Ops... algo deu errado..");
     })
+  }
+
+  async recuperaEnderecoStorage(){
+    const endereco = await this.nativeStorageService.recuperarStorage("endereco");
+    this.formDenuncia.controls["endereco"].setValue(endereco);
+    console.log("Endereco: " + endereco);
+  }
+
+  ionViewWillEnter(){
+    this.recuperaEnderecoStorage();
   }
 
 }
