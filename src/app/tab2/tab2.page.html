@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      Denúncia
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,9 +9,45 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
+      <ion-title size="large">Denúncia</ion-title>
     </ion-toolbar>
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <form [formGroup]="formDenuncia" (ngSubmit)="cadastraDenuncia()">
+    <div>
+      <ion-input placeHolder="Infomre seu nome" minlength="3" formControlName="nome"></ion-input>
+      <div *ngIf="formDenuncia.controls.nome.errors" style="color: red;">
+        <span *ngIf="formDenuncia.controls.nome.errors.required"><small>Campo Obrigatório</small></span>
+        <span *ngIf="formDenuncia.controls.nome.errors.minlength"><small>Informe pelo menos 3 caracteres</small></span>
+      </div>
+    </div>
+    <div>
+      <ion-input placeHolder="Infomre o seu e-mail" formControlName="email"></ion-input>
+      <div *ngIf="formDenuncia.controls.email.errors" style="color: red;">
+        <span *ngIf="formDenuncia.controls.email.errors.required"><small>Campo Obrigatório</small></span>
+        <span *ngIf="formDenuncia.controls.email.errors.pattern"><small>Formato Inválido</small></span><br/>
+        <span *ngIf="formDenuncia.controls.email.errors.email"><small>E-mail Inválido</small></span>
+      </div>
+    </div>
+    <div>
+      <ion-input placeHolder="Infomre o endereço da ocorrência" formControlName="endereco"></ion-input>
+      <div *ngIf="formDenuncia.controls.endereco.errors" style="color: red;">
+        <span *ngIf="formDenuncia.controls.endereco.errors.required"><small>Campo Obrigatório</small></span>
+        <span *ngIf="formDenuncia.controls.endereco.errors.minlength"><small>Informe pelo menos 3 caracteres</small></span>
+      </div>
+    </div>
+    <div>
+      <ion-datetime displayFormat="DD-MM-YYYY" placeHolder="Informe a data da Ocorrência" formControlName="data"></ion-datetime>
+      <div *ngIf="formDenuncia.controls.data.errors" style="color: red;">
+        <span *ngIf="formDenuncia.controls.data.errors.required"><small>Campo Obrigatório</small></span>
+      </div>
+    </div>
+    <div>
+      <ion-textarea placeHolder="Informe a descrição da ocorrência" formControlName="descricao"></ion-textarea>
+      <div *ngIf="formDenuncia.controls.descricao.errors" style="color: red;">
+        <span *ngIf="formDenuncia.controls.descricao.errors.required"><small>Campo Obrigatório</small></span>
+        <span *ngIf="formDenuncia.controls.descricao.errors.minlength"><small>Informe pelo menos 3 caracteres</small></span>
+      </div>
+    </div>
+    <ion-button expand="block" type="submit" [disabled]="!formDenuncia.valid">Salvar</ion-button>
+  </form>
 </ion-content>

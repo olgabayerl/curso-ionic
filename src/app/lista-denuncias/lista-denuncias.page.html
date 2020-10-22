@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Denúncias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let denuncia of denuncias">
+    <ion-label>{{denuncia.nome}}</ion-label>
+    <ion-label>{{denuncia.email}}</ion-label>
+    <ion-label>{{denuncia.endereco}}</ion-label>
+    <ion-label>{{denuncia.data}}</ion-label>
+    <ion-label>{{denuncia.descricao}}</ion-label>
+  </ion-item>
+  <ion-button (click)="getDenuncias()">Obter Denúncias</ion-button>
+  
+</ion-content>
