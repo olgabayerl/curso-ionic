@@ -14,6 +14,9 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import { HttpClientModule } from '@angular/common/http';
 import { NativeStorage } from '@ionic-native/native-storage/ngx';
+import { Camera } from '@ionic-native/camera/ngx';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { NativeGeocoder } from '@ionic-native/native-geocoder/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +31,9 @@ import { NativeStorage } from '@ionic-native/native-storage/ngx';
     StatusBar,
     SplashScreen,
     NativeStorage,
+    Camera,
+    Geolocation,
+    NativeGeocoder,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     
   ],

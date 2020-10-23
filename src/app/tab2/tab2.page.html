@@ -50,4 +50,7 @@
     </div>
     <ion-button expand="block" type="submit" [disabled]="!formDenuncia.valid">Salvar</ion-button>
   </form>
+  <ion-label>Coordenadas: {{latitude}}, {{longitude}}</ion-label><br/>
+  <ion-label>Endereco: {{endereco}}</ion-label>
+  <ion-button expand="block" (click)="recuperaCoordenadas()">Obter Coordenadas</ion-button>
 </ion-content>
